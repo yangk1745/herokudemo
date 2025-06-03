@@ -2,5 +2,4 @@ pandas
 numpy
 panel
 hvplot
-scikit-learn
-nbconvert
+holoviews
