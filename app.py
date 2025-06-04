@@ -30,8 +30,8 @@ from bokeh.models.formatters import NumeralTickFormatter
 
 
 #read csv
-#glp1dfa = pd.read_csv('glp1dfa.csv')
-glp1dfa = pd.read_csv('https://raw.githubusercontent.com/yangk1745/GLP1/refs/heads/main/glp1dfa.csv')
+glp1dfa = pd.read_csv('glp1dfa.csv')
+#glp1dfa = pd.read_csv('https://raw.githubusercontent.com/yangk1745/GLP1/refs/heads/main/glp1dfa.csv')
 
 
 # In[59]:
