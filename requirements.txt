@@ -3,3 +3,5 @@ numpy
 panel
 hvplot
 holoviews
+scikit-learn
+nbconvert
