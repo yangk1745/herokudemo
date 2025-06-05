@@ -10,7 +10,7 @@
 
 # Disclaimer: This is for academic coursework ONLY. Do not use for clinical decision making; no causations implied in analysis. See end of document for full disclosure/disclaimer.
 
-# In[1]:
+# In[3]:
 
 
 import numpy as np
@@ -24,7 +24,7 @@ from bokeh.models.formatters import NumeralTickFormatter
 #pn.extension(sizing_mode='stretch_width')
 
 
-# In[2]:
+# In[4]:
 
 
 #read csv
@@ -32,13 +32,13 @@ from bokeh.models.formatters import NumeralTickFormatter
 glp1dfa = pd.read_csv('https://raw.githubusercontent.com/yangk1745/GLP1/refs/heads/main/glp1dfa.csv')
 
 
-# In[3]:
+# In[5]:
 
 
 #glp1dfa.head()
 
 
-# In[37]:
+# In[6]:
 
 
 #Plot1
@@ -66,11 +66,11 @@ ipipeline = (
 
 ibarplot1 = ipipeline.hvplot.bar(x='Serious',y='Count',by='Sex',stacked=True,color=['hotpink','lightskyblue','mediumpurple'],
                                  xlabel='Seriousness',ylabel='Number of Events',title='All Adverse Events',grid=True,
-                                yformatter=NumeralTickFormatter(format="0,0")).opts(framewise=True,responsive=True)
+                                yformatter=NumeralTickFormatter(format="0,0"))
 #ibarplot1
 
 
-# In[38]:
+# In[7]:
 
 
 pn.extension('tabulator')
@@ -78,7 +78,7 @@ itable = ipipeline.pipe(pn.widgets.Tabulator, pagination='remote', page_size=10,
 #itable
 
 
-# In[44]:
+# In[8]:
 
 
 #Plot2
@@ -91,7 +91,7 @@ plot2dfc['api2'] = plot2dfc['api1'].map(api_dict)
 #plot2dfc.head()
 
 
-# In[60]:
+# In[9]:
 
 
 #make data pipeline interactive (make frqt2 interactive)
@@ -119,20 +119,20 @@ ibarplot2 = ipipeline2.hvplot.bar(x='api2',y='Count',by='Sex',stacked=True,color
 #ibarplot2
 
 
-# In[58]:
+# In[10]:
 
 
 itable2 = ipipeline2.pipe(pn.widgets.Tabulator, pagination='remote', page_size=10, show_index=False)
 #itable2
 
 
-# In[14]:
+# In[11]:
 
 
 #glp1dfa.head()
 
 
-# In[53]:
+# In[12]:
 
 
 #Plot3 Age violin plots
@@ -145,7 +145,7 @@ plot3dfa = plot3df[['api1','sex2','age3','serious3']]
 #plot3dfa.head()
 
 
-# In[54]:
+# In[13]:
 
 
 #make data pipeline interactive (make frqt2 interactive)
@@ -172,8 +172,8 @@ ipipeline3 = (
     ]
 )
 
-vlnplot3 = ipipeline3.hvplot.violin(y='age3',by=grp_w3, c=grp_w3, xlabel=grp_w3 ,ylabel='Age (years)',title='Age Distributions')
-#vlnplot3
+vlnplot3 = ipipeline3.hvplot.violin(y='age3',by=grp_w3, c=grp_w3, xlabel=grp_w3 ,ylabel='Age (years)',title='Age Distributions',grid=True)
+vlnplot3
 
 
 # In[56]:
