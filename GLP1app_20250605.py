@@ -66,7 +66,7 @@ ipipeline = (
 
 ibarplot1 = ipipeline.hvplot.bar(x='Serious',y='Count',by='Sex',stacked=True,color=['hotpink','lightskyblue','mediumpurple'],
                                  xlabel='Seriousness',ylabel='Number of Events',title='All Adverse Events',grid=True,
-                                yformatter=NumeralTickFormatter(format="0,0"))
+                                yformatter=NumeralTickFormatter(format="0,0")).opts(framewise=True,responsive=True)
 #ibarplot1
 
 
